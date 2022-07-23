@@ -5,7 +5,7 @@ export default function Balance() {
   const { budget } = useBudgetContext();
 
   const getTotals = () => {
-    let totalIncome = 0;
+    let totalIncome = 1;
     let totalExpenses = 0;
     if (budget.filter((element) => element.type === "Income").length > 0) {
       totalIncome = budget
