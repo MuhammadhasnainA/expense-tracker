@@ -2,32 +2,25 @@ import { useState } from "react";
 import { useBudgetContext } from "../Contexts/BudgetContext";
 
 export default function AddTransaction() {
-  const { budget, setBudget } = useBudgetContext();
+  const { budgets, setBudgets, writeToDatabase } = useBudgetContext();
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("Expenses");
 
-  const HandleAddTransaction = (e) => {
+  const HandleSubmit = (e) => {
     e.preventDefault();
     if (description !== "" && amount !== "" && type !== "") {
-      setBudget([
-        ...budget,
-        {
-          description: description,
-          amount: amount,
-          type: type,
-        },
-      ]);
+      writeToDatabase(description, amount, type);
       setDescription("");
       setAmount("");
     } else {
-      alert("All Fiels are mandatory!");
+      alert("Fill Below");
     }
   };
 
   return (
     <>
-      <form onSubmit={HandleAddTransaction}>
+      <form onSubmit={(e) => HandleSubmit(e)}>
         <input
           type="text"
           placeholder="Description"

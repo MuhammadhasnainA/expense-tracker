@@ -10,17 +10,23 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body{
+  background: rgb(238, 237, 237);
+}
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
   width: 100%;
-  min-height: 100vh;
-  background: rgb(238, 237, 237);
+  min-height: auto;
 }
 
 .Nav{
+  position: absolute;
+  top: 0%;
   background: black;
   width: 100%;
   display: flex;
@@ -30,7 +36,18 @@
   color: white;
 }
 
+.Nav button{
+  position: absolute;
+  right: 10%;
+  background: red;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
 .width{
+  margin-top: 80px;
   width: 35%;
   background: white;
   padding: 20px;
@@ -162,4 +179,20 @@ form button:hover {
 .mt-2{
   margin-top: 20px;
   margin-bottom: 5px;
+}
+
+
+.Login{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.Login input{
+  width: calc(100% - 20px);
+  padding: 7px 10px;
+  font-size: 1rem;
+  outline: none;
+  border: 1.99px solid gainsboro;
+  border-radius: 4px;
+  margin: 10px 0px;
 }

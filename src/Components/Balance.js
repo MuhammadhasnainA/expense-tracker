@@ -1,22 +1,21 @@
-import { useEffect, useState } from "react";
 import { useBudgetContext } from "../Contexts/BudgetContext";
 
 export default function Balance() {
-  const { budget } = useBudgetContext();
+  const { budgets } = useBudgetContext();
 
   const getTotals = () => {
     let totalIncome = 0;
     let totalExpenses = 0;
-    if (budget.filter((element) => element.type === "Income").length > 0) {
-      totalIncome = budget
-        .filter((element) => element.type === "Income")
-        .map((element) => element.amount)
+    if (budgets.filter((element) => element.budget.type === "Income").length > 0) {
+      totalIncome = budgets
+        .filter((element) => element.budget.type === "Income")
+        .map((element) => element.budget.amount)
         .reduce((acc, amount) => parseInt(acc) + parseInt(amount));
     }
-    if (budget.filter((element) => element.type === "Expenses").length > 0) {
-      totalExpenses = budget
-        .filter((element) => element.type === "Expenses")
-        .map((element) => element.amount)
+    if (budgets.filter((element) => element.budget.type === "Expenses").length > 0) {
+      totalExpenses = budgets
+        .filter((element) => element.budget.type === "Expenses")
+        .map((element) => element.budget.amount)
         .reduce((acc, amount) => parseInt(acc) + parseInt(amount));
     }
     return {
