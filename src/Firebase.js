@@ -4,7 +4,7 @@ import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBW_fY1Dae2gDvIxa04W3VqOicJ97eL3jQ",
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
   authDomain: "expense-traacker.firebaseapp.com",
   databaseURL: "https://expense-traacker-default-rtdb.firebaseio.com/",
   projectId: "expense-traacker",

@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   margin: 0;
   padding: 0;
 }
 
-#root{
+#root {
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-body{
+body {
   background: rgb(238, 237, 237);
 }
 
@@ -24,7 +24,7 @@ body{
   min-height: auto;
 }
 
-.Nav{
+.Nav {
   position: absolute;
   top: 0%;
   background: black;
@@ -36,17 +36,19 @@ body{
   color: white;
 }
 
-.Nav button{
+.Nav button {
   position: absolute;
   right: 10%;
   background: red;
   color: white;
-  border-radius: 10px;
-  padding: 10px 20px;
+  border-radius: 5px;
+  padding: 8px 18px;
   font-size: 1rem;
   cursor: pointer;
+  border: none;
 }
-.width{
+
+.width {
   margin-top: 80px;
   width: 35%;
   background: white;
@@ -60,7 +62,7 @@ body{
   margin-left: 20%;
 }
 
-#radio-income{
+#radio-income {
   margin: 10px;
   margin-right: 20px;
 }
@@ -75,7 +77,7 @@ body{
   font-size: 1rem;
 }
 
-form label{
+form label {
   font-size: 1.1rem;
 }
 
@@ -89,7 +91,7 @@ form button {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 form button:hover {
@@ -111,7 +113,7 @@ form button:hover {
   font-size: 1.1rem;
 }
 
-.totals{
+.totals {
   display: flex;
   justify-content: space-between;
   padding: 7px 10px;
@@ -121,22 +123,22 @@ form button:hover {
 }
 
 .totals p,
-.totals span{
+.totals span {
   font-weight: bold;
   font-size: 1.1rem;
 }
 
-#total-income{
+#total-income {
   color: green;
   font-size: 1.3rem;
 }
 
-#total-expenses{
+#total-expenses {
   color: red;
   font-size: 1.3rem;
 }
 
-.delete{
+.delete {
   outline: none;
   border: none;
   padding: 5px 8px;
@@ -145,25 +147,25 @@ form button:hover {
   cursor: pointer;
 }
 
-.delete img{
+.delete img {
   width: 20px;
   filter: invert(100%);
 }
 
-.Green{
+.Green {
   color: #19e519;
 }
 
-.Red{
+.Red {
   color: red;
 }
 
-.current{
+.current {
   font-size: 1.9rem;
   margin: 5px 0px 15px 0px;
 }
 
-.highlight{
+.highlight {
   color: green;
   font-size: 2.2rem;
 }
@@ -172,22 +174,21 @@ form button:hover {
   display: flex;
 }
 
-.align-center{
+.align-center {
   align-items: center;
 }
 
-.mt-2{
+.mt-2 {
   margin-top: 20px;
   margin-bottom: 5px;
 }
 
-
-.Login{
+.Login {
   width: 100%;
   margin-bottom: 10px;
 }
 
-.Login input{
+.Login input {
   width: calc(100% - 20px);
   padding: 7px 10px;
   font-size: 1rem;
@@ -195,4 +196,85 @@ form button:hover {
   border: 1.99px solid gainsboro;
   border-radius: 4px;
   margin: 10px 0px;
+}
+
+.Loader {
+  position: absolute;
+  top: 30%;
+}
+
+@media (max-width: 1200px) {
+  .width {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .width {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .width {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Loader {
+    top: calc(50% - 50px);
+    height: 100px;
+    width: 100px;
+  }
+  .Nav h1 {
+    position: absolute;
+    left: 5%;
+    font-size: 1.9rem;
+  }
+
+  .Nav button {
+    right: 5%;
+  }
+  .current {
+    font-size: 1.7rem;
+  }
+  .highlight {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .width {
+    width: 90%;
+  }
+  .current {
+    font-size: 1.6rem;
+  }
+  .highlight {
+    font-size: 1.8rem;
+  }
+  .Nav h1 {
+    left: 3%;
+    font-size: 1.7rem;
+  }
+  .Nav button {
+    right: 3%;
+  }
+  .totals {
+    padding: 5px 8px;
+  }
+  .box p {
+    font-size: 1.05rem;
+  }
+  .delete {
+    padding: 3px 6px;
+  }
+  .text {
+    padding: 8px;
+  }
+  .width {
+    width: calc(100% - 30px);
+    padding: 10px;
+  }
 }

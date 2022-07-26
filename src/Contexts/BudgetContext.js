@@ -1,9 +1,10 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../Firebase";
-import { set, ref, onValue, remove, refFromURL, get } from "firebase/database";
+import { set, ref, onValue, remove } from "firebase/database";
 import { uid } from "uid";
 import Spinner from "../Spinner.gif";
+import { useLoginContext } from "../Contexts/LoginContext";
 const BudgetContext = createContext();
 
 export function BudgetContextProvider({ children }) {
@@ -27,6 +28,7 @@ export function BudgetContextProvider({ children }) {
         });
       } else if (!user) {
         navigate("/");
+        setLoading(false);
       }
     });
   }, []);
@@ -48,7 +50,7 @@ export function BudgetContextProvider({ children }) {
     budgets.filter(() => budgets);
   };
 
-  if (loading) return <img src={Spinner} />;
+  if (loading) return <img src={Spinner} className="Loader" />;
 
   return (
     <BudgetContext.Provider
