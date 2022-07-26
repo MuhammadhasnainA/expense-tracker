@@ -25,6 +25,7 @@ const Login = () => {
 
   return (
     <>
+    <div className="FORM">
     <h1>Login</h1>
       <form onSubmit={HandleLogin} className="Login">
         <input
@@ -42,6 +43,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
       <Link to="/register">Create Your account</Link>
+    </div>
     </>
   );
 };

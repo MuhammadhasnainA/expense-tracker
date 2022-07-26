@@ -20,6 +20,7 @@ export default function AddTransaction() {
 
   return (
     <>
+    <h2 className="mt-2">Add Transaction</h2>
       <form onSubmit={(e) => HandleSubmit(e)}>
         <input
           type="text"

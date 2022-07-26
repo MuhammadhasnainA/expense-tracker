@@ -4,7 +4,6 @@ import { auth, db } from "../Firebase";
 import { set, ref, onValue, remove } from "firebase/database";
 import { uid } from "uid";
 import Spinner from "../Spinner.gif";
-import { useLoginContext } from "../Contexts/LoginContext";
 const BudgetContext = createContext();
 
 export function BudgetContextProvider({ children }) {

@@ -11,19 +11,24 @@ export default function App() {
   return (
     <>
       <div className="App">
-      <BrowserRouter>
-        <LoginContextProvider>
-          <BudgetContextProvider>
-            <Nav />
-            <div className="width">
-                <Routes>
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                </Routes>
-            </div>
-          </BudgetContextProvider>
-        </LoginContextProvider>
+        <BrowserRouter>
+          <LoginContextProvider>
+            <BudgetContextProvider>
+              <Nav />
+              <Routes>
+                <Route
+                  path="/home"
+                  element={
+                    <div className="width">
+                      <Home />
+                    </div>
+                  }
+                />
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+              </Routes>
+            </BudgetContextProvider>
+          </LoginContextProvider>
         </BrowserRouter>
       </div>
     </>
