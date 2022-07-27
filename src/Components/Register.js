@@ -42,7 +42,10 @@ const Register = () => {
           />
           <button type="submit">Register</button>
         </form>
-        <Link to="/">GO BACK</Link>
+        <p className="center mt-2">
+          Already a user? 
+          <Link to="/"> Sign in</Link>
+        </p>
       </div>
     </>
   );

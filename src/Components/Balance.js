@@ -6,13 +6,17 @@ export default function Balance() {
   const getTotals = () => {
     let totalIncome = 0;
     let totalExpenses = 0;
-    if (budgets.filter((element) => element.budget.type === "Income").length > 0) {
+    if (
+      budgets.filter((element) => element.budget.type === "Income").length > 0
+    ) {
       totalIncome = budgets
         .filter((element) => element.budget.type === "Income")
         .map((element) => element.budget.amount)
         .reduce((acc, amount) => parseInt(acc) + parseInt(amount));
     }
-    if (budgets.filter((element) => element.budget.type === "Expenses").length > 0) {
+    if (
+      budgets.filter((element) => element.budget.type === "Expenses").length > 0
+    ) {
       totalExpenses = budgets
         .filter((element) => element.budget.type === "Expenses")
         .map((element) => element.budget.amount)
@@ -34,7 +38,10 @@ export default function Balance() {
 
   const { totalIncome, totalExpenses } = getTotals();
 
-  // render
+  const getPercentage = () => {
+    return (totalExpenses / totalIncome) * 100;
+  };
+
   return (
     <div className="amount-details-container">
       <h1 className="current">

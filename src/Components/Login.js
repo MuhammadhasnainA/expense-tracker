@@ -17,7 +17,7 @@ const Login = () => {
       await Login(email, password);
       navigate("/home");
     } catch (err) {
-      setError(err.message);
+      alert(err.message);
     }
   };
 
@@ -25,25 +25,27 @@ const Login = () => {
 
   return (
     <>
-    <div className="FORM">
-    <h1>Login</h1>
-      <form onSubmit={HandleLogin} className="Login">
-        <input
-          type={"email"}
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type={"password"}
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-      <Link to="/register">Create Your account</Link>
-    </div>
+      <div className="FORM">
+        <h1>Login</h1>
+        <form onSubmit={HandleLogin} className="Login">
+          <input
+            type={"email"}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type={"password"}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p className="center mt-2">
+          Not a member? <Link to="/register">Sign up</Link>
+        </p>
+      </div>
     </>
   );
 };

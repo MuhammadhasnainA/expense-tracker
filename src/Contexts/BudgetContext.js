@@ -31,7 +31,7 @@ export function BudgetContextProvider({ children }) {
       }
     });
   }, []);
-
+  
   const writeToDatabase = (description, amount, type) => {
     const uidd = uid();
     set(ref(db, `/${auth.currentUser.uid}/${uidd}`), {
